@@ -1,8 +1,8 @@
 # Local Business Schema Generator
 
-A free, browser-based tool for generating JSON-LD structured data for local businesses.
-
 Live tool: https://digitaldawnin.github.io/local-business-schema-generator/
+
+A free, browser-based tool for generating JSON-LD structured data for local businesses.
 
 Created by [Digital Dawn](https://www.digitaldawn.in/), a digital services company based in Indore, Madhya Pradesh, India.
 
