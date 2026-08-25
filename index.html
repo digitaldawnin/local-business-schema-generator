@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Local Business Schema Generator. Create JSON-LD structured data for local business websites.">
+  <title>Local Business Schema Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./">Local Business Schema Generator</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <p class="eyebrow">Free web tool</p>
+    <h1>Local Business Schema Generator</h1>
+    <p>Create JSON-LD structured data for a local business website. Enter the business details, preview the schema, and copy it to your site.</p>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="card-heading">
+        <h2>Business details</h2>
+        <p>Only information you provide will be included.</p>
+      </div>
+
+      <form id="schemaForm">
+        <div class="form-grid">
+          <label>Business name *<input id="name" required placeholder="Digital Dawn"></label>
+          <label>Business type
+            <select id="type">
+              <option value="LocalBusiness">LocalBusiness</option>
+              <option value="ProfessionalService">ProfessionalService</option>
+              <option value="AdvertisingAgency">AdvertisingAgency</option>
+              <option value="Store">Store</option>
+              <option value="Restaurant">Restaurant</option>
+              <option value="Dentist">Dentist</option>
+              <option value="LegalService">LegalService</option>
+              <option value="RealEstateAgent">RealEstateAgent</option>
+              <option value="AutomotiveBusiness">AutomotiveBusiness</option>
+              <option value="HealthAndBeautyBusiness">HealthAndBeautyBusiness</option>
+            </select>
+          </label>
+          <label class="full">Website<input id="url" type="url" placeholder="https://example.com"></label>
+          <label>Phone<input id="phone" type="tel" placeholder="+91 98765 43210"></label>
+          <label>Email<input id="email" type="email" placeholder="hello@example.com"></label>
+          <label class="full">Description<textarea id="description" rows="3" placeholder="A short, accurate description of the business."></textarea></label>
+          <label>Logo URL<input id="logo" type="url" placeholder="https://example.com/logo.png"></label>
+          <label>Image URL<input id="image" type="url" placeholder="https://example.com/business.jpg"></label>
+        </div>
+
+        <h3>Address</h3>
+        <div class="form-grid">
+          <label class="full">Street address<input id="streetAddress" placeholder="123 Main Street"></label>
+          <label>City<input id="city" placeholder="Indore"></label>
+          <label>State / Province<input id="state" placeholder="Madhya Pradesh"></label>
+          <label>Postal code<input id="postalCode" placeholder="452001"></label>
+          <label>Country<input id="country" value="IN" placeholder="IN"></label>
+        </div>
+
+        <h3>Location coordinates <span class="muted">(optional)</span></h3>
+        <div class="form-grid">
+          <label>Latitude<input id="latitude" type="number" step="any" placeholder="22.7196"></label>
+          <label>Longitude<input id="longitude" type="number" step="any" placeholder="75.8577"></label>
+        </div>
+
+        <h3>Opening hours</h3>
+        <div id="hours" class="hours-list"></div>
+
+        <h3>Additional information <span class="muted">(optional)</span></h3>
+        <div class="form-grid">
+          <label>Price range<input id="priceRange" placeholder="$$"></label>
+          <label>Facebook<input id="facebook" type="url" placeholder="https://facebook.com/example"></label>
+          <label>Instagram<input id="instagram" type="url" placeholder="https://instagram.com/example"></label>
+          <label>LinkedIn<input id="linkedin" type="url" placeholder="https://linkedin.com/company/example"></label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Generate Schema</button>
+          <button type="button" id="sampleBtn" class="secondary">Load Example</button>
+          <button type="button" id="resetBtn" class="ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card output-card">
+      <div class="card-heading output-heading">
+        <div>
+          <h2>Generated JSON-LD</h2>
+          <p>Copy this code and place it inside your page's <code>&lt;head&gt;</code>.</p>
+        </div>
+        <span id="status" class="status" aria-live="polite"></span>
+      </div>
+      <pre id="output"><code>{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness"
+}</code></pre>
+      <div class="actions">
+        <button id="copyBtn" class="primary" type="button">Copy JSON-LD</button>
+        <button id="downloadBtn" class="secondary" type="button">Download .json</button>
+      </div>
+      <div class="notice"><strong>Important:</strong> Use accurate business information. Structured data can help search engines understand a page, but it does not guarantee enhanced search results or rankings.</div>
+    </section>
+  </div>
+
+  <section class="info card">
+    <h2>How to use it</h2>
+    <ol>
+      <li>Enter accurate information about the business.</li>
+      <li>Choose the most appropriate business type.</li>
+      <li>Click <strong>Generate Schema</strong>.</li>
+      <li>Copy the JSON-LD code.</li>
+      <li>Place it in a JSON-LD script block on the relevant page of the website.</li>
+      <li>Validate the implementation with current structured-data documentation and validation tools.</li>
+    </ol>
+    <p class="small">This tool runs entirely in your browser. No business details are uploaded to a server by this application.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>Free local business schema tool · Indore, Madhya Pradesh, India</span>
+    <span>Built by <a href="https://www.digitaldawn.in/" target="_blank" rel="noopener">Digital Dawn</a></span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
